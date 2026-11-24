@@ -52,28 +52,27 @@ export default function Home() {
 function Header({ page, go, menu, setMenu }: {
   page: PageKey; go: (p: PageKey) => void; menu: MenuKey; setMenu: (m: MenuKey) => void;
 }) {
-  const isProduct = ["other-packages", "home-packages", "mitra"].includes(page);
   return <header className="header"><div className="container">
-    {page !== "home" && <div className="topbar">
+    <div className="topbar">
       <div className="top-detail"><span className="top-icon">◷</span><span><b>Jam Kerja</b><br />Senin-Jumat 08.00-16.00 WIB<br />Sabtu 08.00-15.00 WIB</span></div>
       <div className="top-detail"><span className="top-icon envelope">✉</span><span><b>Email</b><br />info@proxinet.co.id</span></div>
       <div className="top-detail"><span className="top-icon phone">☎</span><span><b>Telepon</b><br />0778-6000109</span></div>
       <a className="whatsapp-box" href="https://wa.me/627786000109" target="_blank" rel="noreferrer"><span className="whatsapp-symbol">◉</span><span>HUBUNGI KAMI<br />VIA WHATSAPP</span></a>
-    </div>}
+    </div>
     <div className="navigation">
       <button className="logo-button" onClick={() => go("home")} aria-label="PROXINET Home"><Image src="/images/NEW-LOGO-WEBSITE-PROXINET.png" alt="PROXINET Connecting The World - Certified QMS ISO 9001:2015" width={2048} height={349} priority /></button>
       <nav className="nav-links" aria-label="Navigasi utama">
         <button className={page === "home" ? "nav-link selected" : "nav-link"} onClick={() => go("home")}>HOME</button>
-        <button className={page === "information" ? "nav-link selected" : "nav-link"} onClick={() => go("information")}>INFORMATION</button>
-        <button className={page === "profile" ? "nav-link selected" : "nav-link"} onClick={() => go("profile")}>PROFILE</button>
-        <div className="nav-menu"><button className={isProduct ? "nav-link selected" : "nav-link"} onClick={() => setMenu(menu === "product" ? null : "product")}>PRODUCT <span className="down-caret" /></button>
+        <button className="nav-link" onClick={() => go("information")}>INFORMATION</button>
+        <button className="nav-link" onClick={() => go("profile")}>PROFILE</button>
+        <div className="nav-menu"><button className="nav-link" onClick={() => setMenu(menu === "product" ? null : "product")}>PRODUCT <span className="down-caret" /></button>
           {menu === "product" && <div className="dropdown">
             <button onClick={() => go("other-packages")}>PAKET INTERNET LAINNYA</button>
             <button onClick={() => go("home-packages")}>PAKET INTERNET HOME</button>
             <button onClick={() => go("mitra")}>PROXINET MITRA</button>
           </div>}
         </div>
-        <div className="nav-menu"><button className={page === "contact" || page === "faq" ? "nav-link selected" : "nav-link"} onClick={() => setMenu(menu === "contact" ? null : "contact")}>CONTACT US <span className="down-caret" /></button>
+        <div className="nav-menu"><button className="nav-link" onClick={() => setMenu(menu === "contact" ? null : "contact")}>CONTACT US <span className="down-caret" /></button>
           {menu === "contact" && <div className="dropdown contact-dropdown"><button onClick={() => go("contact")}>CONTACT US</button><button onClick={() => go("faq")}>FAQ</button></div>}
         </div>
       </nav>
