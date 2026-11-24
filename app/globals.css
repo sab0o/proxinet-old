@@ -39,7 +39,9 @@ button {
   margin: 0 auto;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .header {
   background: #fff;
@@ -107,6 +109,10 @@ button {
   font-size: 23px;
 }
 
+/* =========================
+   NAVIGATION
+========================= */
+
 .navigation {
   height: 98px;
   display: flex;
@@ -137,24 +143,39 @@ button {
 }
 
 .nav-link {
-  border: 0;
+  border: none;
   padding: 12px 0;
   background: transparent;
   color: #222;
   font-size: 16px;
   font-weight: 700;
   white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
 /* HOME SELALU BIRU */
-.nav-link.home-link {
-  color: #3e75b1;
+.nav-links .nav-link.home-link,
+.nav-links .nav-link.home-link:hover,
+.nav-links .nav-link.home-link:focus {
+  color: #4076b5 !important;
 }
 
-/* MENU LAIN TETAP HITAM */
-.nav-link:hover {
+/* MENU LAINNYA HITAM SAAT NORMAL */
+.nav-links .nav-link:not(.home-link) {
   color: #222;
 }
+
+/* MENU LAINNYA BIRU SAAT HOVER */
+.nav-links .nav-link:not(.home-link):hover {
+  color: #4076b5 !important;
+}
+
+/* MENU LAINNYA TETAP HITAM SETELAH DIKLIK */
+.nav-links .nav-link:not(.home-link):focus {
+  color: #222;
+}
+
+/* DROPDOWN */
 
 .nav-menu {
   position: relative;
@@ -203,7 +224,9 @@ button {
   min-width: 160px;
 }
 
-/* BREADCRUMB */
+/* =========================
+   BREADCRUMB
+========================= */
 
 .breadcrumb {
   background: #ebeded;
@@ -215,7 +238,9 @@ button {
   font-weight: 300;
 }
 
-/* CONTENT LAYOUT */
+/* =========================
+   CONTENT LAYOUT
+========================= */
 
 .inner-layout {
   display: grid;
@@ -237,7 +262,9 @@ button {
   font-weight: 400;
 }
 
-/* SIDEBAR */
+/* =========================
+   SIDEBAR
+========================= */
 
 .sidebar {
   padding: 0;
@@ -299,7 +326,9 @@ button {
   color: #629e42;
 }
 
-/* HOME */
+/* =========================
+   HOME
+========================= */
 
 .home-banner {
   display: block;
@@ -375,7 +404,9 @@ button {
   font-size: 28px;
 }
 
-/* INFORMATION */
+/* =========================
+   INFORMATION
+========================= */
 
 .information-page img {
   display: block;
@@ -384,7 +415,9 @@ button {
   margin: 0 auto 20px;
 }
 
-/* PROFILE */
+/* =========================
+   PROFILE
+========================= */
 
 .profile-page {
   font-size: 14px;
@@ -413,7 +446,9 @@ button {
   margin: 18px 0 0;
 }
 
-/* PRODUCT */
+/* =========================
+   PRODUCT
+========================= */
 
 .other-packages-page img {
   display: block;
@@ -433,7 +468,9 @@ button {
   height: auto;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact-page {
   color: #888;
@@ -451,7 +488,9 @@ button {
   margin: 16px 0;
 }
 
-/* FAQ */
+/* =========================
+   FAQ
+========================= */
 
 .faq-page {
   width: 100%;
@@ -582,7 +621,6 @@ button {
   overflow-wrap: break-word;
 }
 
-/* Warna baris pertama seperti website existing */
 .faq-table tbody tr:first-child {
   background: #eee;
 }
@@ -591,7 +629,9 @@ button {
   background: #fff;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
   width: 100%;
@@ -632,7 +672,9 @@ button {
   color: #fff;
 }
 
-/* TABLET */
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 1050px) {
   .topbar {
@@ -669,7 +711,9 @@ button {
   }
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 760px) {
   .container {
